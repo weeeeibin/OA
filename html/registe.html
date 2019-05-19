@@ -2,6 +2,7 @@
 <html lang="zh_CN">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
     <title>注册</title>
     <style>
         html{
@@ -84,20 +85,65 @@
             color: #175199;
             text-decoration: none;
         }
+        @keyframes toast-animation{
+            0% {
+                opacity: 0;
+            }
+            25% {
+                opacity: 1;
+            }
+            75%{
+                opacity: 1;
+                top:50px;
+            }
+            100% {
+                opacity: 0;
+                top:-400px;
+            }
+        }
+        .toast{
+            transition: linear;
+            opacity:0;
+            background-color: #fff;
+            height:30px;
+            width:180px;
+            color: #7a7575;
+            text-align: center;
+            font-size: 15px;
+            line-height: 30px;
+            position: absolute;
+            top:50px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(26, 26, 26,.1);
+            box-sizing: border-box;
+        }
     </style>
 </head>
 <body>
     <div class="main">
+        <div id="toast" class="toast"></div>
         <div class="card-content">
             <div class="register-content">
                 <div class="title">注册</div>
                 <input id="username" type="text" placeholder="用户名">
                 <input id="password" type="password" placeholder="密码">
-                <input id="submit"type="button" placeholder="密码" value="注册">
+                <input id="submit"type="button" placeholder="密码" value="注册" onclick="toast()">
             </div>
             <div class="login">已有账号？<a href="login.html">登录</a></div>
         </div>
     </div>
 </body>
-<script>//var theResponse = window.prompt("确认密码","");</script>
+<script>
+        var div = document.getElementById("toast");
+        div.addEventListener("animationend",function(e){
+            div.style.animation = "";
+        });
+        function toast(){
+            div.innerHTML = '<i style="font-size:17px;color:red;" class="fa fa-times" aria-hidden="true"></i>账号密码错误';
+            div.style.animation = "toast-animation 2s";
+        }
+    </script>
 </html>

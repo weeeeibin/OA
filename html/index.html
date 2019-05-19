@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <title>办公自动化</title>
+    <style>
+        html,body{
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            
+        }
+        .head{
+            background-color: #343a40;
+            font-size: 20px;
+            font-weight: 400;
+            width: 100%;
+            height: 56px;
+            color: #fff;
+            line-height: 56px;
+            padding-left: 1rem;
+        }
+        .main-left{
+            width: 250px;
+            height: 100%;
+            background-color: #343a40;
+            box-sizing: border-box;
+        }
+        .main-left ul{
+            height: 90%;
+            overflow:auto;
+            list-style-type:none;
+            padding: 0 0 0 1rem;
+            margin: 0;
+        }
+        .item{
+            font-family: FontAwesome;
+            margin: 0;
+            box-sizing: border-box;
+            line-height: 55px;
+            height:55px;
+            font-size: 17px;
+            color: #868e96;
+            cursor: pointer;
+        }
+        .item i{
+            margin-right: 14px;
+        }
+        .item:hover{
+            color: #d3dbe4;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">OA System</div>
+    <div class="main-left">
+        <ul>
+            <li class="item"><i class="fa fa-address-card"></i>账户管理</li>
+            <li class="item"><i class="fa fa-bell-o"></i>通知</li>
+            <li class="item"><i class="fa fa-cube"></i>部门1<i style="float: right;line-height: 50px;" class="fa fa-angle-right"></i></li>
+            <li class="item"><i class="fa fa-cube"></i>部门2<i style="float: right;line-height: 50px;" class="fa fa-angle-right"></i></li>
+        </ul>
+    </div>
+</body>
+</html>
