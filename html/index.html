@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <script type="text/javascript" src="./js/egg.js"></script>
     <title>办公自动化</title>
     <style>
         html,body{
@@ -13,7 +14,8 @@
             
         }
         .head{
-            background-color: #343a40;
+            position: relative;
+            background-color: #0099CB;
             font-size: 20px;
             font-weight: 400;
             width: 100%;
@@ -21,47 +23,114 @@
             color: #fff;
             line-height: 56px;
             padding-left: 1rem;
+            box-shadow: 0 1px 3px rgba(26, 26, 26,.5);
+            box-sizing: border-box;
+            z-index: 999;
         }
-        .main-left{
+        .main-right{
+            float: left;
+            position: relative;
             width: 250px;
             height: 100%;
-            background-color: #343a40;
+            background-color: #fff;
             box-sizing: border-box;
+        }
+        .main-left{
+            float: left;
+            position: relative;
+            padding-top: 10px;
+            width: 250px;
+            height: 100%;
+            background-color: #fff;
+            box-sizing: border-box;
+        }
+        .main-right{
+            background-color: #eee;
         }
         .main-left ul{
             height: 90%;
             overflow:auto;
             list-style-type:none;
-            padding: 0 0 0 1rem;
             margin: 0;
+            padding: 0;
         }
         .item{
+            user-select: none;
+            padding: 0 0 0 1rem;
             font-family: FontAwesome;
-            margin: 0;
             box-sizing: border-box;
-            line-height: 55px;
-            height:55px;
-            font-size: 17px;
-            color: #868e96;
+            line-height: 42px;
+            height:42px;
+            font-size: 16px;
+            color: #000;
             cursor: pointer;
         }
         .item i{
             margin-right: 14px;
         }
         .item:hover{
-            color: #d3dbe4;
+            background:#0099CB;
+            color: #fff;
+        }
+        .submenu:hover{
+            color:#0099CB;
+            cursor: pointer;
+        }
+        .submenu{
+            user-select: none;
+            height:25px;
+            width: 100%;
+            line-height: 25px;
+            padding: 0 0 0 3.5rem;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <div class="head">OA System</div>
+    <div class="head">Office Automation System</div>
     <div class="main-left">
         <ul>
             <li class="item"><i class="fa fa-address-card"></i>账户管理</li>
             <li class="item"><i class="fa fa-bell-o"></i>通知</li>
-            <li class="item"><i class="fa fa-cube"></i>部门1<i style="float: right;line-height: 50px;" class="fa fa-angle-right"></i></li>
-            <li class="item"><i class="fa fa-cube"></i>部门2<i style="float: right;line-height: 50px;" class="fa fa-angle-right"></i></li>
+            <div id="class_1">
+                <li class="item" id="1" onclick="ul_click(this)"><i class="fa fa-cube"></i>部门1<i style="float: right;line-height: 42px;" class="fa fa-angle-right"></i></li>
+                <ul id="ul" style="height: 0;overflow: hidden;">
+                    <li class="submenu">部门事件1</li>
+                    <li class="submenu">部门事件2</li>
+                    <li class="submenu">部门事件3</li>
+                    <li class="submenu">部门事件4</li>
+                </ul>
+            </div>
+            <div id="class_2">
+                <li class="item" id="2" onclick="ul_click(this)"><i class="fa fa-cube"></i>部门2<i style="float: right;line-height: 42px;" class="fa fa-angle-right"></i></li>
+                <ul id="ul" style="height: 0;overflow: hidden;">
+                    <li class="submenu">部门事件1</li>
+                    <li class="submenu">部门事件2</li>
+                    <li class="submenu">部门事件3</li>
+                    <li class="submenu">部门事件4</li>
+                </ul>
+            </div>
         </ul>
     </div>
+    <div class="main-right" id="right">
+
+    </div>
 </body>
+<script>
+    document.getElementById("right").style.width = document.body.clientWidth - 250 + "px";
+    window.onresize=function(){  
+        document.getElementById("right").style.width = document.body.clientWidth - 250 + "px";
+    }
+    
+    function ul_click(obj){
+        var ul = document.getElementById("class_" + obj.id).getElementsByTagName("ul")[0];
+        if(ul.style.height != "auto"){
+            ul.style.height = "auto"
+            document.getElementById("class_" + obj.id).getElementsByTagName("i")[1].className="fa fa-angle-down"
+        }else{
+            ul.style.height = "0px"
+            document.getElementById("class_" + obj.id).getElementsByTagName("i")[1].className="fa fa-angle-right"
+        }
+    }
+</script>
 </html>
