@@ -43,8 +43,16 @@
             xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
         }
         xmlhttp.onreadystatechange=function(){
-            if (xmlhttp.readyState!=4 && xmlhttp.status!=200){
-                toast("账号或密码错误");
+            if(xmlhttp.readyState == 4){
+                if (xmlhttp.status==200){
+                    if(xmlhttp.responseText != 1){
+                        toast("账号密码错误");
+                    }else{
+                    window.location.href="./oa.html";
+                    }
+                }else{
+                    toast("连接超时...");
+                }
             }
         }
         xmlhttp.open("GET","./Servlet/registe?username=" + username.value + "&password=" + password.value ,true); //提交地址
