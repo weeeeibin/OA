@@ -18,50 +18,24 @@
                 </select>
                 <input id="username" type="text" placeholder="用户名">
                 <input id="password" type="password" placeholder="密码">
-                <input id="submit" type="button" placeholder="密码" value="登陆" onclick="submit()">
+                <input id="submit" type="button" placeholder="密码" value="登陆" onclick="login_click()">
             </div>
             <div class="login">没有账号？<a href="registe.html">注册</a></div>
         </div>
         <div id="toast" class="toast"></div>
     </div>
 </body>
+<script type="text/javascript" src="./js/Utils.js"></script>
 <script>
-    var div = document.getElementById("toast");
     var username = document.getElementById("username");
     var password = document.getElementById("password");
 
-    div.addEventListener("animationend",function(e){
-        div.style.animation = "";
-    });
-    function toast(message){
-        div.innerHTML = '<i style="font-size:17px;color:red;" class="fa fa-times" aria-hidden="true"></i>' + message;
-        div.style.animation = "toast-animation 2s";
-    }
-
-    /*表单提交*/
-    function submit(){
-        var xmlhttp;
-        if (window.XMLHttpRequest){
-            xmlhttp=new XMLHttpRequest();
+    function login_click(){
+        if(username.value == "" || password.value == ""){
+            toast("账号密码不能为空");
+        }else{
+            submit("./Servlet/login?username=" + username.value + "&password=" + password.value,"./oa.html");
         }
-        else{
-            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange=function(){
-            if(xmlhttp.readyState == 4){
-                if (xmlhttp.status==200){
-                    if(xmlhttp.responseText != 1){
-                        toast("账号密码错误");
-                    }else{
-                    window.location.href="./oa.html";
-                    }
-                }else{
-                    toast("连接超时...");
-                }
-            }
-        }
-        xmlhttp.open("GET","./Servlet/login?username=" + username.value + "&password=" + password.value ,true); //提交地址
-        xmlhttp.send();
     }
 </script>
 </html>
