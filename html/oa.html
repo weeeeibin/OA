@@ -24,7 +24,8 @@
             color: #fff;
             line-height: 56px;
             padding-left: 1rem;
-            box-shadow: 0 1px 3px rgba(26, 26, 26,.3);
+            padding-right: 4rem;
+            box-shadow: 0 1px 3px rgba(170, 168, 168, 0.3);
             box-sizing: border-box;
             z-index: 999;
         }
@@ -34,6 +35,53 @@
             height: 100%;
             background-color: #eee;
             box-sizing: border-box;
+            padding-top: 1rem;
+        }
+        .table{
+            text-align: center;
+            width: 85%;
+            position: relative;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        .main-right-table-head{
+            height: 3rem;
+            width: 100%;
+            box-sizing: border-box;
+            background-color:#bdbdbd;
+            box-shadow: 0 1px 3px rgba(26, 26, 26,.1);
+            box-sizing: border-box;
+            border-radius:3px 3px 0 0;
+        }
+        .main-right-table{
+            margin-top:7px;
+            width: 100%;
+            height: 3rem;
+            background-color: rgb(248, 245, 245,.5);
+            box-shadow: 0 1px 3px rgba(26, 26, 26,.1);
+            box-sizing: border-box;
+            border-radius:0 0 3px 3px;
+            border-collapse: collapse;
+        }
+        .main-right-table td{
+            overflow: hidden;
+            white-space: nowrap;
+            max-width: 248px;
+        }
+        .main-right-table td button{
+            cursor: pointer;
+            width: 65%;
+            height: 65%;
+            overflow: hidden;
+            background: #096dd9;
+            border-radius:3px;
+            border: none;
+            color:#fff;
+            outline:none;
+        }
+        .main-right-table td button:active{
+            background:#0050b3; 
         }
         .main-left{
             float: left;
@@ -90,58 +138,103 @@
     <div class="head">Office Automation System</div>
     <div class="main-left">
         <ul style="padding: 10px 0 10px 0">
-            <li class="item"><i class="fa fa-address-card"></i>账户管理</li>
-            <li class="item"><i class="fa fa-bell-o"></i>通知</li>
-            <!-- div[id] = 该div下第一个li[name] -->
             <div id="class_1">
-                <li class="item" name="class_1" onclick="ul_click(this)"><i class="fa fa-cube"></i>部门1<i style="float: right;line-height: 42px;" class="fa fa-angle-right"></i></li>
+                <li class="item" name="class_1" onclick="ul_click(this)"><i class="fa fa-user-circle"></i>人事管理<i style="float: right;line-height: 42px;" class="fa fa-angle-right"></i></li>
                 <ul style="height: 0;overflow: hidden;">
-                    <li class="submenu">部门事件1</li>
-                    <li class="submenu">部门事件2</li>
-                    <li class="submenu">部门事件3</li>
-                    <li class="submenu">部门事件4</li>
+                    <li class="submenu">机构管理</li>
+                    <li class="submenu">部门管理</li>
+                    <li class="submenu">员工管理</li>
                 </ul>
             </div>
             <div id="class_2">
-                <li class="item" name="class_2" onclick="ul_click(this)"><i class="fa fa-cube"></i>部门2<i style="float: right;line-height: 42px;" class="fa fa-angle-right"></i></li>
+                <li class="item" name="class_2" onclick="ul_click(this)"><i class="fa fa-calendar-o"></i>日程管理<i style="float: right;line-height: 42px;" class="fa fa-angle-right"></i></li>
                 <ul style="height: 0;overflow: hidden;">
-                    <li class="submenu">部门事件1</li>
-                    <li class="submenu">部门事件2</li>
-                    <li class="submenu">部门事件3</li>
-                    <li class="submenu">部门事件4</li>
+                    <li class="submenu">我的日程</li>
+                    <li class="submenu">部门日程</li>
+                    <li class="submenu">我的便签</li>
                 </ul>
             </div>
             <div id="class_3">
-                <li class="item" name="class_3" onclick="ul_click(this)"><i class="fa fa-cube"></i>部门3<i style="float: right;line-height: 42px;" class="fa fa-angle-right"></i></li>
+                <li class="item" name="class_3" onclick="ul_click(this)"><i class="fa fa-folder"></i>文档管理<i style="float: right;line-height: 42px;" class="fa fa-angle-right"></i></li>
                 <ul style="height: 0;overflow: hidden;">
-                    <li class="submenu">部门事件1</li>
-                    <li class="submenu">部门事件2</li>
-                    <li class="submenu">部门事件3</li>
-                    <li class="submenu">部门事件4</li>
+                    <li class="submenu">文档管理</li>
+                    <li class="submenu">回收站</li>
+                    <li class="submenu">文件搜索</li>
                 </ul>
             </div>
             <div id="class_4">
-                <li class="item" name="class_4" onclick="ul_click(this)"><i class="fa fa-cube"></i>部门4<i style="float: right;line-height: 42px;" class="fa fa-angle-right"></i></li>
+                <li class="item" name="class_4" onclick="ul_click(this)"><i class="fa fa-comment"></i>消息传递<i style="float: right;line-height: 42px;" class="fa fa-angle-right"></i></li>
                 <ul style="height: 0;overflow: hidden;">
-                    <li class="submenu">部门事件1</li>
-                    <li class="submenu">部门事件2</li>
-                    <li class="submenu">部门事件3</li>
-                    <li class="submenu">部门事件4</li>
+                    <li class="submenu">消息管理</li>
+                    <li class="submenu">信箱</li>
                 </ul>
             </div>
             <div id="class_5">
-                <li class="item" name="class_5" onclick="ul_click(this)"><i class="fa fa-cube"></i>部门5<i style="float: right;line-height: 42px;" class="fa fa-angle-right"></i></li>
+                <li class="item" name="class_5" onclick="ul_click(this)"><i class="fa fa-server"></i>系统管理<i style="float: right;line-height: 42px;" class="fa fa-angle-right"></i></li>
                 <ul style="height: 0;overflow: hidden;">
-                    <li class="submenu">部门事件1</li>
-                    <li class="submenu">部门事件2</li>
-                    <li class="submenu">部门事件3</li>
-                    <li class="submenu">部门事件4</li>
+                    <li class="submenu">校色管理</li>
+                    <li class="submenu">登陆日志</li>
+                    <li class="submenu">操作日志</li>
                 </ul>
+            </div>
+            <div id="class_6">
+                <li class="item" name="class_6" onclick="ul_click(this)"><i class="fa fa-clock-o"></i>考勤管理<i style="float: right;line-height: 42px;" class="fa fa-angle-right"></i></li>
+                <ul style="height: 0;overflow: hidden;">
+                    <li class="submenu">签到签退</li>
+                    <li class="submenu">考勤查询</li>
+                    <li class="submenu">考勤统计</li>
+                </ul>
+            </div>
+            <div id="class_7">
+                <li class="item" name="class_7" onclick="ul_click(this)"><i class="fa fa-sign-out"></i>注销</li>
             </div>
         </ul>
     </div>
     <div class="main-right" id="right">
-
+        <div class="table">
+            <div class="main-right-table-head">
+                <table style="width:100%;height: 100%;line-height: 50%;">
+                    <tr>
+                        <td style="width: 20%;">用户id</td>
+                        <td style="width: 20%;">姓名</td>
+                        <td style="width: 20%;">密码</td>
+                        <td style="width: 20%;">角色</td>
+                        <td style="width: 10%;">用户详情</td>
+                        <td style="width: 5%;">更新</td>
+                        <td style="width: 5%;">删除</td>
+                    </tr>
+                </table>
+            </div>
+            <table class="main-right-table">
+                <tr id="tr1" style="height: 3rem;">
+                    <td style="width: 20%;">100000</td>
+                    <td style="width: 20%;">张三</td>
+                    <td style="width: 20%;">123456</td>
+                    <td style="width: 20%;">管理员</td>
+                    <td style="width: 10%;"><button name="tr1" onclick="edit_click(this)">编辑</button></td>
+                    <td style="width: 5%;"><button name="tr1" onclick="update_click(this)">更新</button></td>
+                    <td style="width: 5%;"><button>删除</button></td>
+                </tr>
+                <tr id="tr2" style="height: 3rem;">
+                    <td style="width: 20%;">100000</td>
+                    <td style="width: 20%;">张三</td>
+                    <td style="width: 20%;">123456</td>
+                    <td style="width: 20%;">管理员</td>
+                    <td style="width: 10%;"><button name="tr2" onclick="edit_click(this)">编辑</button></td>
+                    <td style="width: 5%;"><button name="tr2" onclick="update_click(this)">更新</button></td>
+                    <td style="width: 5%;"><button>删除</button></td>
+                </tr>
+                <tr id="tr3" style="height: 3rem;">
+                    <td style="width: 20%;">100000</td>
+                    <td style="width: 20%;">张三</td>
+                    <td style="width: 20%;">123456</td>
+                    <td style="width: 20%;">管理员</td>
+                    <td style="width: 10%;"><button name="tr3" onclick="edit_click(this)">编辑</button></td>
+                    <td style="width: 5%;"><button name="tr3" onclick="update_click(this)">更新</button></td>
+                    <td style="width: 5%;"><button>删除</button></td>
+                </tr>
+            </table>
+        </div>
     </div>
 </body>
 <script>
@@ -152,6 +245,20 @@
         document.getElementsByTagName("ul")[0].style.height = document.body.clientHeight - 56 + "px";
     }
     
+    function edit_click(obj){
+        var td = document.getElementById(obj.name).getElementsByTagName("td");
+        for(var i=0;i<td.length-3;i++){
+            td[i].setAttribute("contenteditable","true");
+        }
+    }
+
+    function update_click(obj){
+        var td = document.getElementById(obj.name).getElementsByTagName("td");
+        for(var i=0;i<td.length-3;i++){
+            td[i].setAttribute("contenteditable","false");
+        }
+    }
+
     function ul_click(obj){
         var name = obj.getAttribute("name");
         var ul = document.getElementById(name).getElementsByTagName("ul")[0];
