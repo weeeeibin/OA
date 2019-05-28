@@ -174,7 +174,7 @@
             <div id="class_5">
                 <li class="item" name="class_5" onclick="ul_click(this)"><i class="fa fa-server"></i>系统管理<i style="float: right;line-height: 42px;" class="fa fa-angle-right"></i></li>
                 <ul style="height: 0;overflow: hidden;">
-                    <li class="submenu">校色管理</li>
+                    <li onclick="userlist()" class="submenu">账号管理</li>
                     <li class="submenu">登陆日志</li>
                     <li class="submenu">操作日志</li>
                 </ul>
@@ -193,84 +193,16 @@
         </ul>
     </div>
     <div class="main-right" id="right">
-        <div class="table">
-            <div class="main-right-table-head">
-                <table style="width:100%;height: 100%;line-height: 50%;">
-                    <tr>
-                        <td style="width: 20%;">用户id</td>
-                        <td style="width: 20%;">姓名</td>
-                        <td style="width: 20%;">密码</td>
-                        <td style="width: 20%;">角色</td>
-                        <td style="width: 10%;">用户详情</td>
-                        <td style="width: 5%;">更新</td>
-                        <td style="width: 5%;">删除</td>
-                    </tr>
-                </table>
-            </div>
-            <table class="main-right-table">
-                <tr id="tr1" style="height: 3rem;">
-                    <td style="width: 20%;">100000</td>
-                    <td style="width: 20%;">张三</td>
-                    <td style="width: 20%;">123456</td>
-                    <td style="width: 20%;">管理员</td>
-                    <td style="width: 10%;"><button name="tr1" onclick="edit_click(this)">编辑</button></td>
-                    <td style="width: 5%;"><button name="tr1" onclick="update_click(this)">更新</button></td>
-                    <td style="width: 5%;"><button>删除</button></td>
-                </tr>
-                <tr id="tr2" style="height: 3rem;">
-                    <td style="width: 20%;">100000</td>
-                    <td style="width: 20%;">张三</td>
-                    <td style="width: 20%;">123456</td>
-                    <td style="width: 20%;">管理员</td>
-                    <td style="width: 10%;"><button name="tr2" onclick="edit_click(this)">编辑</button></td>
-                    <td style="width: 5%;"><button name="tr2" onclick="update_click(this)">更新</button></td>
-                    <td style="width: 5%;"><button>删除</button></td>
-                </tr>
-                <tr id="tr3" style="height: 3rem;">
-                    <td style="width: 20%;">100000</td>
-                    <td style="width: 20%;">张三</td>
-                    <td style="width: 20%;">123456</td>
-                    <td style="width: 20%;">管理员</td>
-                    <td style="width: 10%;"><button name="tr3" onclick="edit_click(this)">编辑</button></td>
-                    <td style="width: 5%;"><button name="tr3" onclick="update_click(this)">更新</button></td>
-                    <td style="width: 5%;"><button>删除</button></td>
-                </tr>
-            </table>
-        </div>
+
     </div>
 </body>
+<script type="text/javascript" src="./js/oa_base_utils.js"></script>
 <script>
     document.getElementById("right").style.width = document.body.clientWidth - 250 + "px";
     document.getElementsByTagName("ul")[0].style.height = document.body.clientHeight - 56 + "px";
     window.onresize=function(){  
         document.getElementById("right").style.width = document.body.clientWidth - 250 + "px";
         document.getElementsByTagName("ul")[0].style.height = document.body.clientHeight - 56 + "px";
-    }
-    
-    function edit_click(obj){
-        var td = document.getElementById(obj.name).getElementsByTagName("td");
-        for(var i=0;i<td.length-3;i++){
-            td[i].setAttribute("contenteditable","true");
-        }
-    }
-
-    function update_click(obj){
-        var td = document.getElementById(obj.name).getElementsByTagName("td");
-        for(var i=0;i<td.length-3;i++){
-            td[i].setAttribute("contenteditable","false");
-        }
-    }
-
-    function ul_click(obj){
-        var name = obj.getAttribute("name");
-        var ul = document.getElementById(name).getElementsByTagName("ul")[0];
-        if(ul.style.height != "auto"){
-            ul.style.height = "auto"
-            document.getElementById(name).getElementsByTagName("i")[1].className="fa fa-angle-down"
-        }else{
-            ul.style.height = "0px"
-            document.getElementById(name).getElementsByTagName("i")[1].className="fa fa-angle-right"
-        }
     }
 </script>
 </html>
