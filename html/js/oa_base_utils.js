@@ -26,10 +26,10 @@ function ul_click(obj){
 
 function  personnel_management(){
     var right = document.getElementById("right");
-    right.innerHTML = "<iframe \" src=\"./base_html/personnel_management.html\"></iframe>";
+    right.innerHTML = "<iframe \" src=\"./Base_html/personnel_management.html\"></iframe>";
 }
 
 function userlist(){
     var right = document.getElementById("right");
-    right.innerHTML = "<iframe \" src=\"./base_html/userlist.html\"></iframe>";
+    right.innerHTML = "<iframe \" src=\"./Base_html/userlist.html\"></iframe>";
 }
