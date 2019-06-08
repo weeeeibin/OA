@@ -33,3 +33,8 @@ function userlist(){
     var right = document.getElementById("right");
     right.innerHTML = "<iframe \" src=\"./Base_html/userlist.html\"></iframe>";
 }
+
+function list(){
+    var right = document.getElementById("right");
+    right.innerHTML = "<iframe \" src=\"./Base_html/List.html\"></iframe>";
+}
