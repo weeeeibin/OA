@@ -31,7 +31,7 @@
         }else{
             var sec_passwd = prompt("再次输入密码确认提交注册", "");
             if(password.value == sec_passwd){
-                submit("./Servlet/registe?username=" + username.value + "&password=" + password.value,"./index.html");
+                submit("./cn.sgit.web.servlet/RegisterServlet?username=" + username.value + "&password=" + password.value,"./index.html");
             }else{
                 toast("密码不一致");
             }

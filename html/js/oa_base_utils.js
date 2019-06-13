@@ -36,5 +36,5 @@ function userlist(){
 
 function list(){
     var right = document.getElementById("right");
-    right.innerHTML = "<iframe \" src=\"./Base_html/List.html\"></iframe>";
+    right.innerHTML = "<iframe \" src=\"./ViewExcel.jsp?file_nmae=123&title=张三\"></iframe>";
 }

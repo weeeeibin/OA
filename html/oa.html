@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="zh_CN">
 <head>
@@ -78,6 +80,10 @@
     window.onresize=function(){
         right.style.width = document.body.clientWidth - 250 + "px";
         right.style.height = document.body.clientHeight - 56 + "px";
+    }
+    function list(){
+        var right = document.getElementById("right");
+        right.innerHTML = "<iframe \" src=\"./ViewExcel.jsp?title=张三&file_name=List&edit=true&id=10000\"></iframe>";
     }
 </script>
 </html>

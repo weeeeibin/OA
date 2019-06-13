@@ -67,7 +67,7 @@ html,body{
 }
 .main-right-table td button{
     cursor: pointer;
-    width: 65%;
+    width: 80%;
     height: 65%;
     overflow: hidden;
     background: #4285f4;
@@ -129,13 +129,13 @@ html,body{
     font-size: 14px;
 }
 .update_files{
-    margin-right: 11.5px;
+    margin-right: 8px;
     margin-bottom:2rem;
     margin-top:15px;
     cursor: pointer;
     text-align: center;
     line-height: 30px;
-    width: 116px;
+    width: 100px;
     height: 30px;
     background: #4285f4;
     border-radius: 3px;

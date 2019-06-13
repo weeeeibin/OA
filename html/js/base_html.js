@@ -1,11 +1,3 @@
-function  personnel_management(){
-    var body = document.getElementsByTagName("body")[0];
-    body.innerHTML += "<div style=\"width:85%;position: relative;left: 0;right: 0;margin: auto;\">" + 
-    "<input class=\"update_files\" type=\"submit\" value=\"上传excel\">" +
-    "<label for=\"update\" class=\"update_files\">选择文件</label>" +
-    "<from><input id=\"update\" type=\"file\" action=\"./UploadServlet\" method=\"post\" enctype=\"multipart/form-data\" style=\"position:absolute;clip:rect(0 0 0 0);\" \></from>" +
-    "</div>";
-}
 
 function edit_click(obj){
     var td = document.getElementById(obj.name).getElementsByTagName("td");
@@ -23,6 +15,7 @@ function update_click(obj){
 
 function alluser(){
     var body = document.getElementsByTagName("body")[0];
+    var body_context =  body.innerHTML;
     body.innerHTML = "<div class=\"table\"><div class=\"main-right-table-head\"><table style=\"width:100%;height: 100%;line-height: 50%;\">" + 
                       "<tr>" + 
                       "<td style=\"width: 20%;\">id</td><td style=\"width: 20%;\">姓名</td><td style=\"width: 20%;\">密码</td><td style=\"width: 10%;\">部门</td><td style=\"width: 10%;\">权限</td><td style=\"width: 10%;\">用户详情</td><td style=\"width: 5%;\">更新</td><td style=\"width: 5%;\">删除</td>"+
@@ -40,7 +33,19 @@ function alluser(){
                            "<td style=\"width: 5%;\"><button>删除</button></td>"+ 
                            "</tr>";
     }
-    body.innerHTML += "</table></div>"
+    body.innerHTML += "</table></div>";
+}
+
+function personnel_management(){
+	var body = document.getElementsByTagName("body")[0];
+	body.innerHTML += "<div style=\"width:85%;position: relative;left: 0;right: 0;margin: auto;\">" + 
+    					"<form action=\"/OA/UploadServlet\" method=\"post\" enctype=\"multipart/form-data\">" +
+						    "<input class=\"update_files\" type=\"submit\" value=\"上传excel\">" +
+						    "<label for=\"update\" class=\"update_files\">选择文件</label>" +
+						    "<input id=\"update\" name=\"upload\" type=\"file\" style=\"position:absolute;clip:rect(0 0 0 0);\" >" +
+						"</form>" +
+						"</div>";
+	
 }
 
 function userlist(){
@@ -61,5 +66,5 @@ function userlist(){
                            "<td style=\"width: 5%;\"><button>删除</button></td>"+ 
                            "</tr>";
     }
-    body.innerHTML += "</table></div>"
+    body.innerHTML += "</table></div>";
 }
